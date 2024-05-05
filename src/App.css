@@ -1,0 +1,602 @@
+
+body {
+  font-family: 'Segoe  UI', Tahoma; /* Nunito font */
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow: hidden; /* Ensure container clears floats */
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+/* App.css */
+
+nav {
+  background-color: #333;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav button {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav button:hover {
+  color: #ffd700;
+}
+
+
+/* Add more CSS styles for other components as needed */
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px); /* Move text up */
+    opacity: 0; /* Start with opacity 0 */
+  }
+  to {
+    transform: translateY(0); /* Return to original position */
+    opacity: 1; /* Fade in */
+  }
+}
+
+.App-header {
+  background: linear-gradient(135deg, #4fd376 0%, #16701f 100%);
+  color: white;
+  padding: 2rem;
+  animation: fadeIn 2s ease, bounce 2s ease; /* Add bounce animation */
+}
+
+
+.header-content {
+  text-align: center;
+  animation: slideIn 1s ease; /* Apply animation */
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 80px;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about {
+  background-image: url('https://img.freepik.com/premium-photo/cropped-hand-woman-holding-plant_1048944-15166674.jpg?w=740'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff; /* White text */
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff; /* White text */
+}
+
+/* Add animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.about-content {
+  animation: fadeIn 3s ease-out;
+  text-align: center;
+}
+
+
+/* Add animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.features {
+  grid-area: features;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Add animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.features h2{
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.feature-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.feature {
+  flex: 1; /* Adjusted flex property for equal distribution */
+  margin: 0 1rem; /* Added margin */
+  margin-right: 1rem; /* Margin between divs */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease-out;
+}
+
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease-out;
+}
+
+.feature:hover img {
+  transform: translateY(-10px);
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-content p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .feature {
+    flex: 0 0 calc(50% - 2rem); /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .feature {
+    flex: 0 0 100%; /* Adjust for even smaller screens */
+  }
+}
+
+.portfolio {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.portfolio h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item {
+  width: calc(50% - 40px); /* Adjusted width for two items in one line */
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  box-sizing: border-box; /* Ensure padding and border are included in width calculation */
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.portfolio-item h3 {
+  margin: 10px 0;
+  font-size: 1.5em;
+}
+
+.portfolio-item p {
+  font-size: 1.1em;
+}
+
+.blog {
+  text-align: left;
+  padding: 50px;
+  margin-top: -120px;
+}
+
+.blog h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.blog-post {
+  display: flex;
+  margin-bottom: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post img {
+  width: 400px;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-post h3 {
+  margin: 0 0 15px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.blog-post p {
+  margin: 0 0 15px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #666;
+}
+
+.blog-post ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.blog-post li {
+  margin-bottom: 8px;
+}
+.pricing {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.pricing h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #333;
+  margin-top: -20px;
+}
+
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 30px;
+  max-width: 300px;
+  text-align: left;
+}
+
+.pricing-card h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.pricing-card .price {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #5cb85c;
+}
+
+.pricing-card p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+.testimonials h2{
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  margin-top: 2rem;
+
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+  flex-grow: 1;
+}
+
+.testimonial-content p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.testimonial-content p:last-child {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #888;
+}
+
+.testimonial-content .quotation-mark:before {
+  content: "“";
+  font-size: 2rem;
+  color: #4caf50;
+  margin-right: 0.5rem;
+}
+
+.testimonial-content .quotation-mark:after {
+  content: "”";
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+.faqs {
+  text-align: left; /* Align text to the left for better readability */
+  padding: 50px;
+}
+
+.faqs h2 {
+  font-size: 2em;
+  margin-bottom: 30px; /* Increased margin for better separation */
+  margin-top: -30px;
+}
+
+.faq-item {
+  margin-bottom: 30px; /* Increased margin between FAQ items */
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 5px;
+}
+
+.faq-item h3 {
+  margin: 0 0 15px; /* Adjusted margin for better spacing */
+  font-size: 1.3em;
+  color: #333; /* Darker text color */
+}
+
+.faq-item p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #666; /* Slightly lighter text color */
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust height as needed */
+}
+
+.cta {
+  max-width: 400px;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.cta form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.cta label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta input[type="text"],
+.cta input[type="email"],
+.cta textarea {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.cta textarea {
+  resize: vertical;
+}
+
+.cta button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.cta button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.contact-info {
+  text-align: center;
+  padding: 3px 0;
+  background-color: #f9f9f9;
+}
+
+.contact-info h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.contact-info li i {
+  margin-right: 10px;
+  color: #5cb85c; /* Green color for icon */
+}
+
+.contact-info li a {
+  color: #333; /* Darker color for links */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+.contact-info li a:hover {
+  color: #007bff; /* Blue color on hover */
+}
+
+/* App.css */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.footer-links a:hover {
+  color: #ffd700;
+}
+
